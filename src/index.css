@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Impact", "Arial Black", sans-serif;
+  
+  --color-casino-bg: #0D1F1A;
+  --color-casino-card: #1A3A2E;
+  --color-casino-gold: #F5C518;
+  --color-casino-pink: #E8175D;
+  --color-casino-green: #2ECC71;
+}
+
+@layer base {
+  body {
+    @apply bg-[#08120F] text-white font-sans antialiased;
+  }
+}
+
+/* Mobile-first container centering */
+.app-container {
+  @apply min-h-screen mx-auto w-full max-w-[430px] bg-casino-bg relative shadow-2xl overflow-x-hidden;
+}
+
+.gold-gradient {
+  background: linear-gradient(160deg, #C9962A, #E8C84A, #B8860B);
+}
+
+.logo-text {
+  @apply font-display;
+}
+
+.backdrop-blur-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
