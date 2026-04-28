@@ -9,6 +9,14 @@ import LedgerPage from './pages/LedgerPage';
 import LiveCasinoPage from './pages/LiveCasinoPage';
 import StatementPage from './pages/StatementPage';
 
+// Games
+import IplPredictor from './pages/games/IplPredictor';
+import BrickTower from './pages/games/BrickTower';
+import Minesweeper from './pages/games/Minesweeper';
+import ReactionGame from './pages/games/ReactionGame';
+import WordGuess from './pages/games/WordGuess';
+import MemoryMatch from './pages/games/MemoryMatch';
+
 // Components
 import Navbar from './components/Navbar';
 import BottomTabBar from './components/BottomTabBar';
@@ -69,6 +77,12 @@ function AppContent() {
                       <Route path="/ledger" element={<LedgerPage />} />
                       <Route path="/live" element={<LiveCasinoPage />} />
                       <Route path="/statement" element={<StatementPage />} />
+                      <Route path="/game/ipl" element={<IplPredictor />} />
+                      <Route path="/game/tower" element={<BrickTower />} />
+                      <Route path="/game/minesweeper" element={<Minesweeper />} />
+                      <Route path="/game/reaction" element={<ReactionGame />} />
+                      <Route path="/game/wordle" element={<WordGuess />} />
+                      <Route path="/game/memory" element={<MemoryMatch />} />
                       <Route path="*" element={<Navigate to="/home" replace />} />
                     </Routes>
                   </main>

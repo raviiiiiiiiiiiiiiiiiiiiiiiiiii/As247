@@ -1,18 +1,15 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import GameCard from '../components/GameCard';
 
 const games = [
-  { name: 'Matka', gradient: 'linear-gradient(135deg, #f59e0b, #d97706)' },
-  { name: 'Andar Bahar', gradient: 'linear-gradient(135deg, #8b5cf6, #6d28d9)' },
-  { name: 'Worli Matka', gradient: 'linear-gradient(135deg, #10b981, #059669)' },
-  { name: 'Teen Patti T20', gradient: 'linear-gradient(135deg, #ef4444, #b91c1c)' },
-  { name: 'AAA', gradient: 'linear-gradient(135deg, #14b8a6, #0f766e)' },
-  { name: 'Lucky7B', gradient: 'linear-gradient(135deg, #fbbf24, #000000)' },
-  { name: 'Lucky7A', gradient: 'linear-gradient(135deg, #7f1d1d, #450a0a)' },
-  { name: 'DT20', gradient: 'linear-gradient(135deg, #a855f7, #581c87)' },
-  { name: 'DT202', gradient: 'linear-gradient(135deg, #06b6d4, #0891b2)' },
-  { name: 'Teen Patti', gradient: 'linear-gradient(135deg, #be123c, #881337)' },
+  { name: 'IPL Predictor', path: '/game/ipl', gradient: 'linear-gradient(135deg, #f59e0b, #d97706)' },
+  { name: 'Brick Tower', path: '/game/tower', gradient: 'linear-gradient(135deg, #8b5cf6, #6d28d9)' },
+  { name: 'Minesweeper', path: '/game/minesweeper', gradient: 'linear-gradient(135deg, #10b981, #059669)' },
+  { name: 'Reaction Challenge', path: '/game/reaction', gradient: 'linear-gradient(135deg, #ef4444, #b91c1c)' },
+  { name: 'Word Guess', path: '/game/wordle', gradient: 'linear-gradient(135deg, #14b8a6, #0f766e)' },
+  { name: 'Memory Match', path: '/game/memory', gradient: 'linear-gradient(135deg, #fbbf24, #000000)' },
 ];
 
 export default function LiveCasinoPage() {
@@ -23,16 +20,19 @@ export default function LiveCasinoPage() {
       exit={{ opacity: 0, x: -20 }}
       className="pb-24"
     >
-      <h1 className="sr-only">247 Social Casino - Live Games</h1>
+      <h1 className="sr-only">Betting King - Live Games</h1>
       <div className="flex items-center gap-2 p-3">
-        <h2 className="text-lg font-display text-casino-gold uppercase tracking-wider">❤️ Live Games</h2>
+        <h2 className="text-lg font-display text-casino-gold uppercase tracking-wider">❤️ Minigames</h2>
       </div>
 
-      <div className="grid grid-cols-3 gap-2 px-2.5">
+      <div className="grid grid-cols-2 gap-3 px-3">
         {games.map((game, i) => (
-          <GameCard key={i} name={game.name} gradient={game.gradient} index={i} />
+          <Link to={game.path} key={i}>
+            <GameCard name={game.name} gradient={game.gradient} index={i} />
+          </Link>
         ))}
       </div>
     </motion.div>
   );
 }
+
